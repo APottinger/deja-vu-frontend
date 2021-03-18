@@ -8,7 +8,7 @@ document.querySelector('.form').addEventListener('submit', (e)=> {
             lat = location.coords.latitude
             
         
-        const locationUrl = //'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + long + '&units=imperial&exclude=hourly,daily&appid=caa547c009cc2020ab222117a4ce878f'
+        const locationUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + long + '&units=imperial&exclude=hourly,daily&appid=caa547c009cc2020ab222117a4ce878f'
 
         fetch(locationUrl) 
             .then(response =>
@@ -33,7 +33,7 @@ document.querySelector('.form').addEventListener('submit', (e)=> {
     }
 })
     
-    const USER_URL = `http://127.0.0.1:3000/users`
+    const BASE_URL = `http://127.0.0.1:3000`
 //user would be able to sign in and make comments based on the weather for the day.
 //sign in to render the form - render's the user's info on screen
 //they are able to make comments (CRUD functionality)
@@ -50,18 +50,40 @@ document.querySelector('.form').addEventListener('submit', (e)=> {
             method: "POST",
                 headers: {
                     "Content-Type": 'application/json',
-                    Accept: 'application/json'
+                    'Accept': 'application/json'
                 },
             body: JSON.stringify(user = {
                 username: username,
-                email: email
+                email: email,
+                //user_id: data.id
             })
         }
   
-        fetch(USER_URL, configObj)
-   
-        Comment.renderCommentForm()
-    })
+        fetch(`${BASE_URL}/users`, configObj)
+        .then(res => res.json())
+        .then(data => {
+            let username = data.username
+            let email = data.email
+            let user_id = data.id
+
+            let user = {
+                username: username,
+                email: email,
+                id: user_id
+            }
+
+            
+            let newUser = new User(user)
+            console.log(user)
+            console.log(newUser)
+            
+            newUser.renderUser(newUser)
+        })
+        
+       
+})
+
+
+
 
     
-
