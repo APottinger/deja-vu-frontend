@@ -78,6 +78,7 @@ document.querySelector('.form').addEventListener('submit', (e)=> {
             console.log(newUser)
             
             newUser.renderUser(newUser)
+            Comment.getComments()
         })
         
        

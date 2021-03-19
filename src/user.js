@@ -31,7 +31,7 @@ class User{
         const commentForm = document.createElement('form')
 
         commentForm.innerHTML += `<form>
-        <input type="textbody" placeholder="write a comment...">
+        <input type="textbody" id = "cmt-input" placeholder="write a comment...">
         <input type="submit">
         </form>`
         commentForm.className = 'comment-form'
