@@ -2,22 +2,243 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 html {
-    font-size: 62.5%
+    font-size: 62.5%;
+    position: relative;
+    min-height: 100px;
 }
 
 body {
     
-        background: url(pics/elio-santos-B6hw9ooyldM-unsplash.jpg) no-repeat center center fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+    background: url(pics/elio-santos-B6hw9ooyldM-unsplash.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
       
 }
 
+.nav-wrapper {
+    display: flex;
+    justify-content: left;
+}
+#logo {
+    height: 8rem;
+    width: 8rem;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+#title {
+    justify-content: space-between;
+    color: #fffff1;
+    margin-top: 9rem;
+    margin-left: 6rem;
+}
+#title a {
+    padding: 3rem;
+    text-decoration: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+}
 
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    margin-top: 15rem;
+    font-size: 2rem;
+}
+.main h1 {
+    padding: 2rem;
+}
+.main p {
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 5rem;
+}
 
+.form {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+    margin-top: 4rem;
+    margin-bottom: 32rem;
+}
+#username, #email{
+    margin-bottom: 1.5rem;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    border-style: none;
+    border-radius: 2rem;
+    padding: 1rem;
+    padding-right: 6rem;
+    padding-left: 6rem;
+    color: black;
+    opacity: 0.8;
+    outline: none;
+    }
+#submit {
+    margin-bottom: 1.5rem;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 2rem;
+    padding: 1rem;
+    padding-left: 11rem;
+    padding-right: 11rem;
+    color: black;
+    background-color: #603c46;
+    outline: none;
+}
+#username:focus {
+    background-color: rgb(243,208,190)
+}
+#email:focus {
+    background-color: rgb(243,208,190) 
+}
+#submit:hover {
+    cursor: pointer;
+    background-color: rgb(243,208,190) ;
+}
+
+.footer {
+    background-color: black;
+    font-family: 'Work Sans', sans-serif;
+    position: absolute;
+    left: 0;
+    bottom: -10.5rem;
+    right: 0;
+    height: -10rem;
+    width: 100%;
+    }
+.footer p {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.weather-wrapper {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    
+    list-style: none;
+    padding: 2rem;
+    margin: 3rem;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5rem;
+}
+.weather-wrapper li {
+   flex-direction: row;
+   justify-content: center;
+   justify-content: space-between;
+   padding: 1rem;
+}
+#temp {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14rem;
+}
+#weather {
+    padding-bottom: 2rem;
+}
+
+.user-wrapper {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+.newDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+
+}
+
+.cmtDiv {
+    margin-bottom: 5rem;
+}
+#cmt-input {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    border-style: none;
+    border-radius: 2rem;
+    padding: 1rem;
+    padding-right: 6rem;
+    padding-left: 6rem;
+    color: black;
+    opacity: 0.8;
+    outline: none;
+}
+#cmt-btn {
+    margin-bottom: 1.5rem;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 2rem;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: black;
+    background-color: #603c46;
+    outline: none;
+}
+#cmt-input:focus {
+        background-color: rgb(243,208,190) 
+}
+#cmt-btn:hover {
+    cursor: pointer;
+    color: #603c46;
+    transition-delay: 70ms;
+    background-color: rgb(243,208,190);
+}
+
+.name-wrapper {
+    font-size: 5rem;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 3rem;
+}
+#name {
+    list-style: none;
+    text-decoration: none;
+    color: rgb(243,208,190) ;
+
+}
+
+.cmt-list li {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 3rem;
+}
+.cmt-list li p {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.delete-btn {
+    padding: 1rem;
+    padding-right: 2rem;
+    border-style: none;
+    border-radius: 50%;
+    color: black;
+    background-color: rgb(243,208,190);
+}
+.delete-btn:hover {
+    transition-delay: 70ms;
+    cursor: pointer;
+    background-color: #603c46;
+}
 

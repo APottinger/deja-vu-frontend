@@ -7,7 +7,6 @@ class Comment{
 
         //get
     static getComments(){
-            
             fetch('http://127.0.0.1:3000/comments')
             .then(resp => resp.json())
             .then(comments => {
@@ -15,9 +14,8 @@ class Comment{
                 for (const comment of comments){
                     let cmt = new Comment(comment)
                     cmt.renderComment()
-                    }
+                }
             })
-      
         }
         
         renderComment(newComment){
@@ -29,18 +27,19 @@ class Comment{
 
             const li = document.createElement('li')
             li.dataset.id = this.id
-            li.innerHTML += `${this.content}`
+            let pTag = document.createElement('p')
+            pTag.innerText += `${this.content}`
 
             const deleteBtn = document.createElement('button')
             deleteBtn.innerText = 'delete'
+            deleteBtn.className = 'delete-btn'
             deleteBtn.addEventListener('click', this.deleteComment)
            
-            const editBtn = document.createElement('button')
-            editBtn.innerText = 'edit'
-            editBtn.addEventListener('click', this.editComment)
+            //const editBtn = document.createElement('button')
+            //editBtn.innerText = 'edit'
+            //editBtn.addEventListener('click', this.editComment)
             
-            
-            li.append(editBtn, deleteBtn)
+            li.append(pTag, deleteBtn)
             ul.appendChild(li)
             div.appendChild(ul)
             document.body.appendChild(div)
@@ -48,17 +47,14 @@ class Comment{
         }
 
 
-        deleteComment(){
-            
+        deleteComment(e){
+            e.preventDefault()
             const userId = this.parentElement.dataset.id
             
             fetch(`http://127.0.0.1:3000/comments/${userId}`, {
                 method: "DELETE",
             })
-                .then(res => res.json())
-                .then(() => location.reload())
-    
-            
+            this.parentElement.remove()
         }
     
 

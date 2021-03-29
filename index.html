@@ -7,30 +7,49 @@
     <script defer src="src/index.js"></script>
     <script defer src="src/user.js"></script>
     <script defer src="src/comment.js"></script>
+    <script defer src="src/skycons.js"></script>
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/design.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,600&display=swap" rel="stylesheet">
     <title>déjà vu</title>
 </head>
 <body>
     <div class="nav-wrapper">
-        <header id="title">
-            <h1>déjà vu</h1>
+        <div id="title">
             <a href="index.html">Home</a>
             <a href="#" id='user-link'>About</a>
-        </header>
+            <img id="logo" src="styles/pics/logo.png" alt="logo">
+        </div>
+    </div>
+    
+    <div class="main">
+        <h1>déjà vu</h1>
+        <p>It's always sunny in Philadelphia, it changes everywhere else</p>
     </div>
 
     <div class="weather-wrapper">
         <h3 id="weather"></h3>
-    
+        <!-- <canvas id="cloudy" width="64" height="64"></canvas> -->
     <form class="form">
-        <label for="username">Username</label>
-        <input type="text" id="username">
-        <label for="email">Email</label>
-        <input type="text" id="email">
-        <input type="submit">
+        <input type="text" id="username" placeholder="username">
+        <input type="text" id="email" placeholder="email">
+        <input id="submit" type="submit">
     </form>
     </div>
+    
+    
+    <footer>
+        <div class="footer">   
+            <p>deja vu &copy 2021</p>
+        </div>
+        
+    </footer>
 
     </body>
 </html>

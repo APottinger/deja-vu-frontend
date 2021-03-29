@@ -15,8 +15,7 @@ class User{
         let newLi = document.createElement('li')
         newLi.className = 'user-li'
         newLi.dataset.id = this.id
-        newLi.innerText = this.username
-
+                
         newList.appendChild(newLi)
         newDiv.appendChild(newList)
         document.body.append(newDiv)
@@ -30,16 +29,26 @@ class User{
         userForm.style.display = "none";
         const commentForm = document.createElement('form')
 
-        commentForm.innerHTML += `<form>
-        <input type="textbody" id = "cmt-input" placeholder="write a comment...">
-        <input type="submit">
-        </form>`
+        commentForm.innerHTML += `
+        <div class="newDiv">
+            <div class="name-wrapper">
+            <p id="name">Hey ${this.username}, how are you today?</p>
+        </div>
+            <div class="cmtDiv">
+            <form>
+                <input type="textbody" id = "cmt-input" placeholder="write a comment...">
+                <input id="cmt-btn" type="submit">
+            </form>
+            </div>
+        </div>`
         commentForm.className = 'comment-form'
         document.querySelector('.user-li').appendChild(commentForm)
+
+
         commentForm.addEventListener('submit', (e)=> {
             e.preventDefault()
                  
-            let cmtInput = e.target.children[0].value
+            let cmtInput = e.target.children[0].children[1].children[0].value
             const userId = parseInt(e.target.parentElement.dataset.id)
             
             const configObj = {
@@ -66,16 +75,6 @@ class User{
 }
     
     
-    /* getUser(){
-        fetch('http://127.0.0.1:3000/users')
-        .then(resp => resp.json())
-        .then(users => { 
-            for (const user of users){
-                let u = new User(user.id, user.username, user.email)
-                //console.log(u)
-            }
-            User.renderUser()
-        })
-    } */
+
 
 

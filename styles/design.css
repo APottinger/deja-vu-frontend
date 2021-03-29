@@ -1,0 +1,11 @@
+* {
+    color: #fffff1;
+}
+
+.main {
+    font-family: 'Rubik', sans-serif;
+}
+
+a:hover {
+    color: rgb(243,208,190)
+}
