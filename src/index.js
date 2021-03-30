@@ -27,31 +27,12 @@ document.querySelector('.form').addEventListener('submit', (e)=> {
                         <li id="temp"> ${temperature}°</li>
                     <ul>
                 `
-                //setIcons()
             })
         })
     }
 })
-
-    /* function setIcons(){
-        
-        var icons = new Skycons({"color": "white"});
-        //if (weather[0].children[0].children[0].innerText === "Cloudy"){
-            let x = 2
-        if (weather[0].children[0].children[0].innerText === '"Cloudy"'){
-            debugger
-        }
-            icons.set("cloudy", Skycons.CLOUDY);
-            icons.play()  
-         
-    } */
-
-
-        
+      
     const BASE_URL = `http://127.0.0.1:3000`
-//user would be able to sign in and make comments based on the weather for the day.
-//sign in to render the form - render's the user's info on screen
-//they are able to make comments (CRUD functionality)
     
     let userForm = document.querySelector('.form')
     userForm.addEventListener('submit', (e)=> {
@@ -70,7 +51,6 @@ document.querySelector('.form').addEventListener('submit', (e)=> {
             body: JSON.stringify(user = {
                 username: username,
                 email: email,
-                //user_id: data.id
             })
         }
   
@@ -96,8 +76,22 @@ document.querySelector('.form').addEventListener('submit', (e)=> {
             Comment.getComments()
         })
         
-       
+    
 })
+
+
+    /* function setIcons(){
+        
+        var icons = new Skycons({"color": "white"});
+        //if (weather[0].children[0].children[0].innerText === "Cloudy"){
+            let x = 2
+        if (weather[0].children[0].children[0].innerText === '"Cloudy"'){
+            debugger
+        }
+            icons.set("cloudy", Skycons.CLOUDY);
+            icons.play()  
+         
+    } */
 
 
 

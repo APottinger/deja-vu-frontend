@@ -5,7 +5,7 @@ class Comment{
         this.id = comment.id
     }
 
-        //get
+   
     static getComments(){
             fetch('http://127.0.0.1:3000/comments')
             .then(resp => resp.json())
