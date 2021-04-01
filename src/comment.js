@@ -1,16 +1,19 @@
 class Comment{
+    static all = []
+
     constructor(comment){
         this.user_id = comment.user_id
         this.content = comment.content
         this.id = comment.id
+        Comment.all.push(this)
     }
 
-   
+   //
     static getComments(){
             fetch('http://127.0.0.1:3000/comments')
             .then(resp => resp.json())
             .then(comments => {
-                console.log(comments)
+                //console.log(comments)
                 for (const comment of comments){
                     let cmt = new Comment(comment)
                     cmt.renderComment()
@@ -35,10 +38,7 @@ class Comment{
             deleteBtn.className = 'delete-btn'
             deleteBtn.addEventListener('click', this.deleteComment)
            
-            //const editBtn = document.createElement('button')
-            //editBtn.innerText = 'edit'
-            //editBtn.addEventListener('click', this.editComment)
-            
+                
             li.append(pTag, deleteBtn)
             ul.appendChild(li)
             div.appendChild(ul)
